@@ -1,0 +1,9 @@
+<es-link class="d-flex justify-content-start" [classList]="classList">
+    <ng-container *ngIf="isIconLeft">
+        <es-icon [faIcon]="faIcon" [ngClass]="iconClassList"></es-icon>
+    </ng-container>
+    <ng-content></ng-content>
+    <ng-container *ngIf="!isIconLeft">
+        <es-icon [faIcon]="faIcon" [ngClass]="iconClassList"></es-icon>
+    </ng-container>
+</es-link>

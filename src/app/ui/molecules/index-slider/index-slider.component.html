@@ -1,0 +1,16 @@
+<slider-angular>
+    <slider>
+        <sliderlist-horizontal [delayTime]="4000">
+            <slider-item *ngFor="let slideItem of slideList">
+                <slider-image class="w-100" [image]="slideItem.slideImage"></slider-image>
+            </slider-item>
+        </sliderlist-horizontal>
+    </slider>
+    <banner>
+        <banner-list>
+            <banner-item *ngFor="let bannerItem of bannerList">
+                <banner-image class="d-none d-lg-flex w-100 h-100" [image]="bannerItem.bannerImage"></banner-image>
+            </banner-item>
+        </banner-list>
+    </banner>
+</slider-angular>

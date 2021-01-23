@@ -1,0 +1,9 @@
+:host ::ng-deep{
+    display: block;
+    input:focus{
+        background-color: transparent;
+        border-color: #ced4da;
+        outline: 0;
+        box-shadow: none;
+    }
+}

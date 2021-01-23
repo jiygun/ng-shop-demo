@@ -1,0 +1,22 @@
+<es-card>
+    <es-link classList="d-flex flex-column">
+        <es-card-header class="d-flex flex-column w-100 overflow-hidden p-0 bg-white border-0">
+            <es-list class="d-flex flex-row" locationSlide locationSlideReady="{{locationSlideReady}}">
+                <es-list-item class="flex-shrink-0 w-100 h-100 border-0 p-0" *ngFor="let productImage of productModel.productImages;" #productImageList>
+                    <es-image class="d-block pb-1" src="{{productImage}}"></es-image>
+                </es-list-item>
+            </es-list>
+            <es-list class="banner__list banner__list-deactive flex-row">
+                <es-list-item class="p-0 me-1 border-0 banner__item" *ngFor="let productImage of productModel.productImages"></es-list-item>
+            </es-list>
+        </es-card-header>
+        <es-card-body class="text-start">
+            <es-span classList="product__item-code text-muted">{{productModel.productCode}}</es-span>
+            <es-paragraph classList="text-nowrap overflow-hidden">{{productModel.productName}}</es-paragraph>
+            <es-span classList="fs-4 text-success fw-bold">{{productModel.productPrice}} $</es-span>
+        </es-card-body>
+    </es-link>
+    <es-card-footer class="bg-white border-0 text-center">
+        <es-link classList="btn-success">Add To Cart</es-link>
+    </es-card-footer>
+</es-card>

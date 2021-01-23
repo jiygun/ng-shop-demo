@@ -1,0 +1,57 @@
+:host ::ng-deep{
+    display: block;
+    width: 100%;
+    .nav__list{
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1030;
+        overflow: auto;
+    }
+    .nav__list-item__image{
+        width: 200px;
+        height: 175px;
+    }
+    .nav__list-item{
+        border-top: 1px solid #dee2e6 !important;
+    }
+    .nav__list-dropdown--show{
+        display: flex !important;
+        position: fixed !important;
+        top: 54px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1029;
+        overflow: auto;
+    }
+}
+
+@media (min-width: 1200px) { 
+    :host{
+        .nav__list{
+            position: relative;
+            overflow: unset;
+            z-index: unset;
+        }
+        .nav__list-item{
+            border-top: 2px solid transparent !important;
+            transition: all .15s ease-in;
+            &:hover{
+                border-top: 2px solid #198754 !important;
+            }
+        }
+        .nav__list-dropdown{
+            border: 1px solid #ced4da;
+            border-top: 0;
+            left: 0;
+            z-index: 1028;
+        }
+        .nav__list-sub__item{
+            border: none !important;
+        }
+    }
+}

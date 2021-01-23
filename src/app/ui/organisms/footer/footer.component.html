@@ -1,0 +1,47 @@
+<footer>
+    <hr class="my-0">
+    <es-container>
+        <es-row class="py-4">
+            <es-col class="col-12 col-lg-2">
+                <h3 class="h3">E-Shop</h3>
+                <es-list class="flex-row flex-lg-column">
+                    <es-list-item class="border-0 rounded-0 ps-0">
+                        <es-link [href]="'routeLink'" classList="ps-0 text-muted">About Us</es-link>
+                    </es-list-item>
+                    <es-list-item class="border-0 rounded-0 ps-0">
+                        <es-link [href]="'routeLink'" classList="ps-0 text-muted">Privacy Policy</es-link>
+                    </es-list-item>
+                    <es-list-item class="border-0 rounded-0 ps-0">
+                        <es-link [href]="'routeLink'" classList="ps-0 text-muted">Cookies</es-link>
+                    </es-list-item>
+                    <es-list-item class="border-0 rounded-0 ps-0">
+                        <es-link [href]="'routeLink'" classList="ps-0 text-muted">Licenses </es-link>
+                    </es-list-item>
+                </es-list>
+            </es-col>
+            <es-col class="col-12 col-lg-5">
+                <h3 class="h3">Categories</h3>
+                <es-list class="d-flex flex-row flex-wrap">
+                    <es-list-item class="border-0 rounded-0 ps-0" *ngFor="let footerLink of footerCategoryLinks">
+                        <es-link [href]="footerLink.routeLink" classList="ps-0 text-muted">{{footerLink.title}}</es-link>
+                    </es-list-item>
+                </es-list>
+            </es-col>
+            <es-col class="col-12 col-lg-5">
+                <h3 class="h3">Featured Products</h3>
+                <es-list class="d-flex flex-row flex-wrap">
+                    <es-list-item class="border-0 rounded-0 ps-0" *ngFor="let footerLink of footerCategoryLinks">
+                        <es-link [href]="footerLink.routeLink" classList="ps-0 text-muted">{{footerLink.title}}</es-link>
+                    </es-list-item>
+                </es-list>
+            </es-col>
+        </es-row>
+    </es-container>
+    <hr class="my-0">
+    <div class="bg-dark py-5">
+        <es-container class="d-flex justify-content-between">
+            <es-span classList="text-muted">Copyright 2021 JG. All rights reserved.</es-span>
+            <es-span classList="text-muted">Jiyan Güngen</es-span>
+        </es-container>
+    </div>
+</footer>

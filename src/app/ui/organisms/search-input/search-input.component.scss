@@ -1,0 +1,18 @@
+:host ::ng-deep{
+    display: block;
+    input{
+        border-radius: 3rem;
+    }
+    es-label{
+        z-index: 99;
+        transition: all .3s ease-out;
+        left: .75rem;
+    }
+    input:focus{
+        border-color: #212529 !important;
+        &+es-label{
+            -webkit-transform: translateY(-1rem) translateY(-.2rem) scale(.8);
+            transform: translateY(-1rem) translateY(-.2rem) scale(.8);
+        }
+    }
+}

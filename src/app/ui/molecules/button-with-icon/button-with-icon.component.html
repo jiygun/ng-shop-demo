@@ -1,0 +1,9 @@
+<es-button [classList]="classList">
+    <ng-container *ngIf="isIconLeft">
+        <es-icon [faIcon]="faIcon" class="pe-2"></es-icon>
+    </ng-container>
+    <ng-content></ng-content>
+    <ng-container *ngIf="!isIconLeft">
+        <es-icon [faIcon]="faIcon" class="ps-2"></es-icon>
+    </ng-container>
+</es-button>

@@ -1,0 +1,20 @@
+:host ::ng-deep{
+    es-input{
+        border-radius: .25rem;
+    }
+    input{
+        background-color: transparent;
+    }
+    es-icon{
+        z-index: 99;
+    }
+    es-icon{
+        right: .75rem;
+    }
+    input, fa-icon{
+        transition: all .3s ease-out;
+    }
+    input:focus{
+        border-color: #212529 !important;
+    }
+}

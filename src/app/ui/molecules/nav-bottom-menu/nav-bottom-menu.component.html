@@ -1,0 +1,53 @@
+<es-list class="nav__list bg-white d-xl-flex justify-content-start list-group-horizontal-xl" [ngClass]="classList" #navMenu>
+    <es-list-item class="nav__list-mobil-header d-flex d-xl-none flex-row justify-content-between bg-success position-sticky fixed-top border-0 rounded-0 px-0 py-2">
+        <es-link-with-icon classList="text-white" [isIconLeft]="true" [faIcon]="faUser" iconClassList="pe-2" *ngIf="true">Sign In</es-link-with-icon>
+        <es-link-with-icon classList="text-white" [isIconLeft]="true" [faIcon]="faUser" iconClassList="pe-2" *ngIf="false">Account</es-link-with-icon>
+        <es-link-with-icon classList="text-white" [isIconLeft]="true" [faIcon]="isSubMenuOpen?faBack:faTimes" (click)="isSubMenuOpen?toggleSubList($event):navMenu.toggleNavMenuList()"></es-link-with-icon>
+    </es-list-item>
+    <es-list-item class="nav__list-item position-static border-0 rounded-0 p-0" *ngFor="let category of categoryList" navOpener>
+        <es-link classList="d-block w-100 h-100 text-start px-3 py-2" (click)="toggleSubList($event)">{{category.categoryName}}</es-link>
+        <es-row class="d-none nav__list-dropdown mx-0 w-100 position-absolute bg-white" #subList>
+            <es-col class="col-12 col-xl-9 px-0 d-flex flex-column flex-xl-row">
+                <es-col class="col col-xl-4 flex-grow-0">
+                    <es-list class="">
+                        <es-list-item class="rounded-0 p-0 nav__list-sub__item" *ngFor="let subCategory of getSubListWithSection(category.subCategories,1)">
+                            <es-link [href]="subCategory.seo_url" classList="px-3 py-2">{{subCategory.categoryName}}</es-link>
+                        </es-list-item>
+                    </es-list>
+                </es-col>
+                <es-col class="col col-xl-4 flex-grow-0">
+                    <es-list>
+                        <es-list-item class="rounded-0 p-0 nav__list-sub__item" *ngFor="let subCategory of getSubListWithSection(category.subCategories,2)">
+                            <es-link [href]='subCategory.seo_url' classList="px-3 py-2">{{subCategory.categoryName}}</es-link>
+                        </es-list-item>
+                    </es-list>
+                </es-col>
+                <es-col class="col col-xl-4 flex-grow-0">
+                    <es-list>
+                        <es-list-item classList="rounded-0 p-0 nav__list-sub__item" *ngFor="let subCategory of getSubListWithSection(category.subCategories,3)">
+                            <es-link [href]='subCategory.seo_url' classList="px-3 py-2">{{subCategory.categoryName}}</es-link>
+                        </es-list-item>
+                    </es-list>
+                </es-col>
+            </es-col>
+            <es-col class="col-3 d-none d-xl-flex">
+                <es-image class="p-3 nav__list-item__image" src='../../../assets/image/angular.svg'></es-image>
+            </es-col>
+            <es-col class="col-2 d-none d-xl-flex mb-2">
+                <es-link classList="btn-success">Visit All..</es-link>
+            </es-col>
+        </es-row>
+    </es-list-item>
+    <es-list-item class="nav__list-item d-xl-none bg-success position-static border-0 rounded-0 p-0">
+        <es-link [href]="'asldklaskd'" classList="px-3 py-2 text-light">Today's Deals</es-link>
+    </es-list-item>
+    <es-list-item class="nav__list-item d-xl-none bg-success position-static border-0 rounded-0 p-0">
+        <es-link [href]="'asldklaskd'" classList="px-3 py-2 text-light">Customer Service</es-link>
+    </es-list-item>
+    <es-list-item class="nav__list-item d-xl-none bg-success position-static border-0 rounded-0 p-0">
+        <es-link [href]="'asldklaskd'" classList="px-3 py-2 text-light">Gaming</es-link>
+    </es-list-item>
+    <es-list-item class="nav__list-item d-xl-none bg-success position-static border-0 rounded-0 p-0">
+        <es-link [href]="'asldklaskd'" classList="px-3 py-2 text-light">Contact Us</es-link>
+    </es-list-item>
+</es-list>

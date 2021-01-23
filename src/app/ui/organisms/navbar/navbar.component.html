@@ -1,0 +1,58 @@
+<header class="bg-white position-relative" style="z-index:9999;">
+    <div class="bg-light">
+        <es-container class="nav--top justify-content-center align-items-center">
+            <es-nav-top-menu class="d-none d-xl-flex">
+            </es-nav-top-menu>
+        </es-container>
+    </div>
+    <hr class="mb-1 mt-0 bg-success">
+    <es-container class="">
+        <es-row class="w-100 mx-0 flex-row-reverse flex-xl-row position-relative py-1">
+            <es-col class="col-6 col-xl-4 d-flex justify-content-end justify-content-xl-start align-items-center">
+                <es-logo (click)="bottomNavMenu.navMenu.toggleNavMenuList()"></es-logo>
+            </es-col>
+            <es-col class="search col-12 col-xl-4 d-flex justify-content-start align-items-center">
+                <es-search-input class="w-100"></es-search-input>
+            </es-col>
+            <es-col class="col-6 col-xl-4 d-flex justify-content-start justify-content-xl-end align-items-center">
+                <es-link-with-icon [faIcon]="faUser" [isIconLeft]="true" class="d-none d-xl-flex position-relative" iconClassList="pe-0 pe-xl-3" classList="btn-primary px-4" (click)="userNavList.toggleNavMenuList()">
+                    Account
+                    <es-list class="user__nav-list position-absolute" #userNavList>
+                        <es-list-item class="bg-primary border-0 rounded-0 p-1" *ngFor="let navLink of userNavModel">
+                            <es-link classList="text-white" [href]="navLink.routeLink">{{navLink.title}}</es-link>
+                        </es-list-item>
+                    </es-list>
+                </es-link-with-icon>
+                <es-link-with-icon [faIcon]="faShoppingCart" [isIconLeft]= "true" class="cart--button ms-0 ms-xl-3 position-relative" iconClassList="pe-0 pe-xl-3" classList="btn-success d-flex justify-content-center text-white px-2 px-xl-5">{{isMobile?'':'Cart'}}
+                    <es-list class="basket__nav-list position-absolute rounded" #userNavList>
+                        <es-list-item class="bg-success border-0 rounded-0 p-1" *ngIf="false">
+                            <es-link classList="text-white" class="text-center">There are no items in your cart</es-link>
+                        </es-list-item>
+                        <es-list-item class="rounded-0 p-0">
+                            <es-card class="flex-row border-0 py-2">
+                                <es-image class="d-flex justify-content-center align-items-center basket__image" src="../../../assets/image/angular.svg"></es-image>
+                                <es-card-body class="d-flex flex-column align-items-start py-0 pe-0 basket__body">
+                                    <es-span classList="text-dark" class="text-overflow-hidden w-100">PHILIPS 55PUS7805 55" SMART TVssssssssssss</es-span>
+                                    <es-span classList="h5 text-success">5650 TL</es-span>
+                                </es-card-body>
+                            </es-card>
+                        </es-list-item>
+                        <es-list-item class="d-flex justify-content-center">
+                            <es-link classList="btn-success">
+                                Continue
+                            </es-link>
+                        </es-list-item>
+                    </es-list>
+                </es-link-with-icon>
+
+            </es-col>
+        </es-row>
+    </es-container>
+    <hr class="my-0">
+    <div class="">
+        <es-container class="justify-content-start align-items-center px-0">
+            <es-nav-bottom-menu #bottomNavMenu></es-nav-bottom-menu>
+        </es-container>
+    </div>
+    <hr class="mt-0">
+</header>

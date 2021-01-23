@@ -1,0 +1,10 @@
+:host{
+    background-color: transparent;
+    &.banner__item{
+        background-color: #ccc;
+        height: 2px;
+    }
+    &.banner__item--active{
+        background-color: #198754;
+    }
+}
