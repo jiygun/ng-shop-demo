@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { RootComponent } from './ui/pages/root/root.component';
+import { RootModule } from './ui/pages/root/root.module';
 
 const routes: Routes = [
-  {path:'',component:RootComponent,pathMatch: 'full',children:[
-    {path:'',loadChildren: './ui/pages/home/home.module#HomeModule', pathMatch: 'full'}
-  ]}
+  {path:'',loadChildren: ()=>RootModule, pathMatch: 'full'},
 ];
 
 @NgModule({

@@ -21,12 +21,12 @@ const tempSlideList=new Array({id:1,slideImage:"https://via.placeholder.com/1200
 })
 export class SlideService {
   private _database:Database;
-  constructor(private httpClient:HttpClient) { 
+  constructor(private httpClient:HttpClient) {
     this._database=new Http(httpClient);
   }
   getSlideList():Observable<SlideModel[]>{
     return new Observable((observe)=>{
-      this._database.get('https://jsonplaceholder.typicode.com/todos/').subscribe((slideList:I_ResponseModel<I_SlideModel>)=>{
+      this._database.get<I_ResponseModel<I_SlideModel>>('https://jsonplaceholder.typicode.com/todos/').subscribe(slideList=>{
         observe.next(tempSlideList.map((slide:I_SlideModel)=>(slide as SlideModel)));
         observe.complete();
       },(error)=>{

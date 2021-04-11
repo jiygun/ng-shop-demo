@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './root.component.html',
-  styleUrls: ['./root.component.scss']
+  template: `
+      <es-navbar></es-navbar>
+      <router-outlet></router-outlet>
+      <es-footer></es-footer>
+  `,
 })
-export class RootComponent implements OnInit {
-
+export class RootComponent {
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

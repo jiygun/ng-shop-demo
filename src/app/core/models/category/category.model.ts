@@ -1,4 +1,7 @@
-export class CategoryModel{
-    constructor(public readonly id:number,public readonly parentId:number,public readonly categoryName:string,public readonly seo_url:string,public readonly subCategories?:CategoryModel[]){
-    }
+export interface CategoryModel {
+  readonly id: number;
+  readonly parentId: number;
+  readonly categoryName: string;
+  readonly seo_url: string;
+  readonly subCategories?: CategoryModel[];
 }

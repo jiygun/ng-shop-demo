@@ -1,14 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { ProductModel } from 'src/app/core/models/product/product.model';
 
 @Component({
   selector: 'es-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.scss']
+  styleUrls: ['./product-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductListComponent {
-
-  @Input() productList!:ProductModel[];
-  constructor() { }
-
+  @Input() productList!: ProductModel[];
+  constructor() {}
 }

@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RootComponent } from './root.component';
-import { RouterModule } from '@angular/router';
 import { NavbarModule } from '../../organisms/navbar/navbar.module';
 import { FooterModule } from '../../organisms/footer/footer.module';
-
+import { RootRoutingModule } from "./root-routing.module";
 
 
 @NgModule({
@@ -13,7 +12,7 @@ import { FooterModule } from '../../organisms/footer/footer.module';
   ],
   imports: [
     CommonModule,
-    RouterModule,
+    RootRoutingModule,
     NavbarModule,
     FooterModule
   ]

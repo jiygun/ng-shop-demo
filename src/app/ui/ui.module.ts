@@ -28,13 +28,12 @@ import { ParagraphModule } from './atoms/paragraph/paragraph.module';
 import { ProductListModule } from './organisms/product-list/product-list.module';
 import { RootModule } from './pages/root/root.module';
 import { HomeModule } from './pages/home/home.module';
+import { ProductFilterModule } from './organisms/product-filter/product-filter.module';
 
 
 
 @NgModule({
-  declarations: [
-
-  ],
+  declarations: [],
   imports: [
     CommonModule,
     ButtonModule,
@@ -64,7 +63,8 @@ import { HomeModule } from './pages/home/home.module';
     ParagraphModule,
     ProductListModule,
     RootModule,
-    HomeModule
+    HomeModule,
+    ProductFilterModule
   ],
   exports:[
     ButtonModule,
@@ -92,7 +92,8 @@ import { HomeModule } from './pages/home/home.module';
     FooterModule,
     IndexModule,
     ParagraphModule,
-    ProductListModule
+    ProductListModule,
+    ProductFilterModule
   ]
 })
 export class UiModule { }

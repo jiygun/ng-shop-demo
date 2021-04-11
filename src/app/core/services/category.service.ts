@@ -59,12 +59,12 @@ const tempCategoryModel=new Array(
 })
 export class CategoryService {
   private _database:Database;
-  constructor(private httpClient:HttpClient) { 
+  constructor(private httpClient:HttpClient) {
     this._database=new Http(httpClient);
   }
   getCategoryList():Observable<CategoryModel[]>{
     return new Observable((observe)=>{
-      this._database.get('https://jsonplaceholder.typicode.com/todos/').subscribe((categoryList:I_ResponseModel<I_CategoryModel>)=>{
+      this._database.get<I_ResponseModel<I_CategoryModel>>('https://jsonplaceholder.typicode.com/todos/').subscribe(categoryList=>{
         const resCategoryList:CategoryModel[]=new Array();
         tempCategoryModel.forEach((i_categoryModel:I_CategoryModel,index:number,i_categoryList:I_CategoryModel[])=>{
           if(i_categoryModel.parentId===CategoryIds.mainCategory){

@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LogoComponent } from './logo.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TitleModule } from '../../atoms/title/title.module';
 
 
 
@@ -15,6 +16,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CommonModule,
     LinkModule,
     IconModule,
+    TitleModule,
     FontAwesomeModule
   ],
   exports:[
